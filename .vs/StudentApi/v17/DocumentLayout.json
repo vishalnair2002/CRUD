@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A18E7229-908A-4268-AA0B-B48A3750FAE8}|StudentApi.csproj|c:\\users\\visha\\onedrive\\desktop\\inlogic tasks\\studentapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A18E7229-908A-4268-AA0B-B48A3750FAE8}|StudentApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A18E7229-908A-4268-AA0B-B48A3750FAE8}|StudentApi.csproj|c:\\users\\visha\\onedrive\\desktop\\inlogic tasks\\studentapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A18E7229-908A-4268-AA0B-B48A3750FAE8}|StudentApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A18E7229-908A-4268-AA0B-B48A3750FAE8}|StudentApi.csproj|c:\\users\\visha\\onedrive\\desktop\\inlogic tasks\\studentapi\\models\\strudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A18E7229-908A-4268-AA0B-B48A3750FAE8}|StudentApi.csproj|solutionrelative:models\\strudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A18E7229-908A-4268-AA0B-B48A3750FAE8}|StudentApi.csproj|c:\\users\\visha\\onedrive\\desktop\\inlogic tasks\\studentapi\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A18E7229-908A-4268-AA0B-B48A3750FAE8}|StudentApi.csproj|solutionrelative:controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A18E7229-908A-4268-AA0B-B48A3750FAE8}|StudentApi.csproj|c:\\users\\visha\\onedrive\\desktop\\inlogic tasks\\studentapi\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A18E7229-908A-4268-AA0B-B48A3750FAE8}|StudentApi.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StudentsController.cs",
+              "DocumentMoniker": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\Controllers\\StudentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StudentsController.cs",
+              "ToolTip": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\Controllers\\StudentsController.cs",
+              "RelativeToolTip": "Controllers\\StudentsController.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAswDcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T20:52:58.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T20:43:11.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Strudent.cs",
+              "DocumentMoniker": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\Models\\Strudent.cs",
+              "RelativeDocumentMoniker": "Models\\Strudent.cs",
+              "ToolTip": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\Models\\Strudent.cs",
+              "RelativeToolTip": "Models\\Strudent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T20:41:06.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-08T20:38:32.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T20:32:28.494Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

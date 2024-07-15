@@ -1,0 +1,68 @@
+<div class="container">
+  <h1>Student Registration</h1>
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" autocomplete="name" />
+    </div>
+    <div>
+      <label for="photo">Photo</label>
+      <input id="photo" formControlName="photo" type="file" autocomplete="photo" />
+    </div>
+    <div>
+      <label for="phone">Phone Number</label>
+      <input id="phone" formControlName="phone" autocomplete="tel" />
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" type="email" autocomplete="email" />
+    </div>
+    <div>
+      <label for="studentId">Student ID</label>
+      <input id="studentId" formControlName="studentId" autocomplete="student-id" />
+    </div>
+    <div>
+      <label for="major">Major Subject</label>
+      <input id="major" formControlName="major" autocomplete="major" />
+    </div>
+    <div>
+      <label for="year">Year</label>
+      <input id="year" formControlName="year" autocomplete="year" />
+    </div>
+    <button type="submit">{{ editedStudent ? 'Save' : 'Submit' }}</button>
+    <button type="button" (click)="cancelEdit()" *ngIf="editedStudent">Cancel</button>
+  </form>
+
+  <h2>Registered Students</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Photo</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Student ID</th>
+        <th>Major</th>
+        <th>Year</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{ student.name }}</td>
+        <td>
+          <img *ngIf="student.photo" [src]="student.photo" alt="{{ student.name }}'s photo" />
+        </td>
+        <td>{{ student.phone }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.studentId }}</td>
+        <td>{{ student.major }}</td>
+        <td>{{ student.year }}</td>
+        <td>
+          <button (click)="editStudent(student)">Edit</button>
+          <button (click)="deleteStudent(student)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
