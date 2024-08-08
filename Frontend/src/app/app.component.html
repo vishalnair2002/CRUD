@@ -96,20 +96,4 @@
       </tr>
     </tbody>
   </table>
-
-  <button class="btn btn-success" (click)="exportToExcel()">Export to Excel</button>
-  <button class="btn btn-warning" (click)="exportToPDF()">Export to PDF</button>
-
-  <canvas baseChart
-    [datasets]="barChartData"
-    [labels]="barChartLabels"
-    [options]="barChartOptions"
-    [plugins]="barChartOptions"
-    [legend]="barChartLegend"
-    [chartType]="barChartType">
-  </canvas>
-
-  <ul>
-    <li *ngFor="let student of students">{{ student.name }} ({{ student.year }})</li>
-  </ul>
 </div>

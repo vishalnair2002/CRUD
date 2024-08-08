@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { StudentService } from './student.service';
 import { CommonModule } from '@angular/common';
-import * as XLSX from 'xlsx';
-import jsPDF from 'jspdf';
-import 'jspdf-autotable';
+import { Observable } from 'rxjs';
 
 interface Student {
   id: any;
@@ -30,11 +28,6 @@ export class AppComponent implements OnInit {
   studentForm: FormGroup;
   students: Student[] = [];
   editedStudent: Student | null = null;
-barChartData: any;
-barChartLabels: any;
-barChartOptions: any;
-barChartLegend: any;
-barChartType: any;
 
   constructor(private formBuilder: FormBuilder, private studentService: StudentService) {
     this.studentForm = this.formBuilder.group({
@@ -58,35 +51,6 @@ barChartType: any;
     });
   }
 
-  exportToExcel(): void {
-    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.students);
-    const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Students');
-    XLSX.writeFile(wb, 'students.xlsx');
-  }
-
-  exportToPDF(): void {
-    const doc = new jsPDF();
-    const col = ['Name', 'Photo', 'Phone', 'Email', 'Student ID', 'Major', 'Year'];
-    const rows: (string | number)[][] = [];
-
-    this.students.forEach(student => {
-      const temp = [
-        student.name,
-        student.photo,
-        student.phone,
-        student.email,
-        student.studentId,
-        student.major,
-        student.year
-      ];
-      rows.push(temp);
-    });
-
-    doc.autoTable(col, rows);
-  doc.save('students.pdf');
-  }
-
   onSubmit(): void {
     if (this.studentForm.invalid) {
       console.error('Form is invalid', this.studentForm.errors);
@@ -101,15 +65,14 @@ barChartType: any;
 
     console.log(`${this.editedStudent ? 'Updating' : 'Adding'} student:`, student);
 
-    const request = this.editedStudent ?
-      this.studentService.updateStudent(student) :
-      this.studentService.addStudent(student);
+    const request: Observable<void | Student> = this.editedStudent ?
+  this.studentService.updateStudent(student) :
+  this.studentService.addStudent(student);
 
-    request.subscribe(
-      () => this.loadStudents(),
-      error => console.error(`Error ${this.editedStudent ? 'updating' : 'adding'} student:`, error)
-    );
-
+request.subscribe(
+  () => this.loadStudents(),
+  (error: Error) => console.error(`Error ${this.editedStudent ? 'updating' : 'adding'} student:`, error)
+);
     this.editedStudent = null;
     this.studentForm.reset();
   }
