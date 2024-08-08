@@ -1,40 +1,73 @@
 <div class="container">
-  <h1>Student Registration</h1>
+  <h1>{{ title }}</h1>
+
+  <nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/dashboard">Dashboard</a>
+  </nav>
+
   <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
-    <div>
+    <div class="form-group">
       <label for="name">Name</label>
-      <input id="name" formControlName="name" autocomplete="name" />
+      <input id="name" formControlName="name" class="form-control">
+      <div *ngIf="studentForm.get('name')?.invalid && studentForm.get('name')?.touched" class="alert alert-danger">
+        Name is required.
+      </div>
     </div>
-    <div>
+
+    <div class="form-group">
       <label for="photo">Photo</label>
-      <input id="photo" formControlName="photo" type="file" autocomplete="photo" />
+      <input id="photo" formControlName="photo" class="form-control">
     </div>
-    <div>
-      <label for="phone">Phone Number</label>
-      <input id="phone" formControlName="phone" autocomplete="tel" />
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input id="phone" formControlName="phone" class="form-control">
+      <div *ngIf="studentForm.get('phone')?.invalid && studentForm.get('phone')?.touched" class="alert alert-danger">
+        Phone is required and should be a valid 10-digit number.
+      </div>
     </div>
-    <div>
+
+    <div class="form-group">
       <label for="email">Email</label>
-      <input id="email" formControlName="email" type="email" autocomplete="email" />
+      <input id="email" formControlName="email" class="form-control">
+      <div *ngIf="studentForm.get('email')?.invalid && studentForm.get('email')?.touched" class="alert alert-danger">
+        Email is required and should be valid.
+      </div>
     </div>
-    <div>
+
+    <div class="form-group">
       <label for="studentId">Student ID</label>
-      <input id="studentId" formControlName="studentId" autocomplete="student-id" />
+      <input id="studentId" formControlName="studentId" class="form-control">
+      <div *ngIf="studentForm.get('studentId')?.invalid && studentForm.get('studentId')?.touched" class="alert alert-danger">
+        Student ID is required.
+      </div>
     </div>
-    <div>
-      <label for="major">Major Subject</label>
-      <input id="major" formControlName="major" autocomplete="major" />
+
+    <div class="form-group">
+      <label for="major">Major</label>
+      <input id="major" formControlName="major" class="form-control">
+      <div *ngIf="studentForm.get('major')?.invalid && studentForm.get('major')?.touched" class="alert alert-danger">
+        Major is required.
+      </div>
     </div>
-    <div>
+
+    <div class="form-group">
       <label for="year">Year</label>
-      <input id="year" formControlName="year" autocomplete="year" />
+      <input id="year" formControlName="year" class="form-control">
+      <div *ngIf="studentForm.get('year')?.invalid && studentForm.get('year')?.touched" class="alert alert-danger">
+        Year is required and should be a valid number.
+      </div>
     </div>
-    <button type="submit">{{ editedStudent ? 'Save' : 'Submit' }}</button>
-    <button type="button" (click)="cancelEdit()" *ngIf="editedStudent">Cancel</button>
+
+    <button type="submit" class="btn btn-primary">{{ editedStudent ? 'Update' : 'Add' }} Student</button>
+    <button type="button" class="btn btn-secondary" (click)="cancelEdit()" *ngIf="editedStudent">Cancel</button>
   </form>
 
-  <h2>Registered Students</h2>
-  <table>
+  <hr>
+
+  <h2>Student List</h2>
+  <table class="table">
     <thead>
       <tr>
         <th>Name</th>
@@ -50,19 +83,33 @@
     <tbody>
       <tr *ngFor="let student of students">
         <td>{{ student.name }}</td>
-        <td>
-          <img *ngIf="student.photo" [src]="student.photo" alt="{{ student.name }}'s photo" />
-        </td>
+        <td>{{ student.photo }}</td>
         <td>{{ student.phone }}</td>
         <td>{{ student.email }}</td>
         <td>{{ student.studentId }}</td>
         <td>{{ student.major }}</td>
         <td>{{ student.year }}</td>
         <td>
-          <button (click)="editStudent(student)">Edit</button>
-          <button (click)="deleteStudent(student)">Delete</button>
+          <button class="btn btn-info" (click)="editStudent(student)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteStudent(student)">Delete</button>
         </td>
       </tr>
     </tbody>
   </table>
+
+  <button class="btn btn-success" (click)="exportToExcel()">Export to Excel</button>
+  <button class="btn btn-warning" (click)="exportToPDF()">Export to PDF</button>
+
+  <canvas baseChart
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [plugins]="barChartOptions"
+    [legend]="barChartLegend"
+    [chartType]="barChartType">
+  </canvas>
+
+  <ul>
+    <li *ngFor="let student of students">{{ student.name }} ({{ student.year }})</li>
+  </ul>
 </div>

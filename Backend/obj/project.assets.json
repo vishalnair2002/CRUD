@@ -4769,11 +4769,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\StudentApi.csproj",
+      "projectUniqueName": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\Backend\\StudentApi.csproj",
       "projectName": "StudentApi",
-      "projectPath": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\StudentApi.csproj",
+      "projectPath": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\Backend\\StudentApi.csproj",
       "packagesPath": "C:\\Users\\visha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\obj\\",
+      "outputPath": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\Backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\visha\\AppData\\Roaming\\NuGet\\NuGet.Config",

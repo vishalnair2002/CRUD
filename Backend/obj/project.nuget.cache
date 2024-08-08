@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "77YMP1+4ZjM=",
+  "dgSpecHash": "deS1I1t1eZk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\StudentApi.csproj",
+  "projectFilePath": "C:\\Users\\visha\\OneDrive\\Desktop\\Inlogic tasks\\StudentApi\\Backend\\StudentApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\visha\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\visha\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
