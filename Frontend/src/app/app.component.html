@@ -1,10 +1,5 @@
 <div class="container">
-  <h1>{{ title }}</h1>
-
-  <nav>
-    <a routerLink="/">Home</a>
-    <a routerLink="/dashboard">Dashboard</a>
-  </nav>
+  <h1>Student Registration</h1>
 
   <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
@@ -66,7 +61,7 @@
 
   <hr>
 
-  <h2>Student List</h2>
+  <h1>Student List</h1>
   <table class="table">
     <thead>
       <tr>
