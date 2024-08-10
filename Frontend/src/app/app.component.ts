@@ -102,4 +102,10 @@ request.subscribe(
       });
     }
   }
+  exportToExcel(): void {
+    this.studentService.exportToExcel(this.students, 'students');
+  }
+  exportToPDF(): void {
+    this.studentService.exportToPDF(this.students, 'students');
+  }
 }
