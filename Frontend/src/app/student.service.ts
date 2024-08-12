@@ -31,6 +31,10 @@ export class StudentService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
+  getStudentsPerGrade(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/students-per-grade`);
+  }
+
   exportToExcel(students: any[], fileName: string): void {
     const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(students);
     const workbook: XLSX.WorkBook = {
