@@ -38,7 +38,7 @@ form input, form select {
 }
 
 /* Button styling */
-form button {
+form button, .student-list button {
   padding: 1rem 2rem;
   background-color: #4CAF50;
   color: white;
@@ -51,7 +51,7 @@ form button {
 }
 
 /* Button hover effect */
-form button:hover {
+form button:hover, .student-list button:hover {
   background-color: #45a049;
 }
 
@@ -76,4 +76,30 @@ table th {
 table img {
   max-width: 50px;
   border-radius: 50%;
+}
+
+button.btn.custom-btn {
+  background-color: #4CAF50; /* Green background */
+}
+
+.custom-btn {
+  padding: 0rem 1rem;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem; /* Adjust font size for buttons */
+  text-transform: uppercase;
+  margin-right: 0.4rem; /* Spacing between buttons */
+}
+
+.bubble-alert {
+  color: red; /* Text color */
+  background-color: #f8d7da; /* Background color */
+  border: 1px solid #f5c6cb; /* Border color */
+  padding: 10px 15px; /* Padding inside the bubble */
+  border-radius: 20px; /* Rounded corners for the bubble effect */
+  margin-top: 5px; /* Space between the input and the bubble */
+  display: inline-block; /* Align the bubble with content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for 3D effect */
 }
