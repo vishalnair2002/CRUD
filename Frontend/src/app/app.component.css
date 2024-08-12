@@ -103,3 +103,24 @@ button.btn.custom-btn {
   display: inline-block; /* Align the bubble with content */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for 3D effect */
 }
+
+.container {
+  margin-top: 20px;
+}
+
+.grade-statistics {
+  margin-top: 20px;
+}
+
+.grade-statistics h2 {
+  font-size: 1.5em;
+}
+
+.grade-statistics ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.grade-statistics li {
+  padding: 5px 0;
+}
