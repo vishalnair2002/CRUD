@@ -5,20 +5,20 @@
     <div class="form-group">
       <label for="name">Name</label>
       <input id="name" formControlName="name" class="form-control">
-      <div *ngIf="studentForm.get('name')?.invalid && studentForm.get('name')?.touched" class="alert alert-danger">
+      <div *ngIf="studentForm.get('name')?.invalid && studentForm.get('name')?.touched" class="bubble-alert">
         Name is required.
       </div>
     </div>
 
     <div class="form-group">
       <label for="photo">Photo</label>
-      <input id="photo" formControlName="photo" class="form-control">
+      <input id="photo" type="file" (change)="onFileChange($event)" class="form-control">
     </div>
 
     <div class="form-group">
       <label for="phone">Phone</label>
       <input id="phone" formControlName="phone" class="form-control">
-      <div *ngIf="studentForm.get('phone')?.invalid && studentForm.get('phone')?.touched" class="alert alert-danger">
+      <div *ngIf="studentForm.get('phone')?.invalid && studentForm.get('phone')?.touched" class="bubble-alert">
         Phone is required and should be a valid 10-digit number.
       </div>
     </div>
@@ -26,7 +26,7 @@
     <div class="form-group">
       <label for="email">Email</label>
       <input id="email" formControlName="email" class="form-control">
-      <div *ngIf="studentForm.get('email')?.invalid && studentForm.get('email')?.touched" class="alert alert-danger">
+      <div *ngIf="studentForm.get('email')?.invalid && studentForm.get('email')?.touched" class="bubble-alert">
         Email is required and should be valid.
       </div>
     </div>
@@ -34,7 +34,7 @@
     <div class="form-group">
       <label for="studentId">Student ID</label>
       <input id="studentId" formControlName="studentId" class="form-control">
-      <div *ngIf="studentForm.get('studentId')?.invalid && studentForm.get('studentId')?.touched" class="alert alert-danger">
+      <div *ngIf="studentForm.get('studentId')?.invalid && studentForm.get('studentId')?.touched" class="bubble-alert">
         Student ID is required.
       </div>
     </div>
@@ -42,7 +42,7 @@
     <div class="form-group">
       <label for="major">Major</label>
       <input id="major" formControlName="major" class="form-control">
-      <div *ngIf="studentForm.get('major')?.invalid && studentForm.get('major')?.touched" class="alert alert-danger">
+      <div *ngIf="studentForm.get('major')?.invalid && studentForm.get('major')?.touched" class="bubble-alert">
         Major is required.
       </div>
     </div>
@@ -50,11 +50,19 @@
     <div class="form-group">
       <label for="year">Year</label>
       <input id="year" formControlName="year" class="form-control">
-      <div *ngIf="studentForm.get('year')?.invalid && studentForm.get('year')?.touched" class="alert alert-danger">
+      <div *ngIf="studentForm.get('year')?.invalid && studentForm.get('year')?.touched" class="bubble-alert">
         Year is required and should be a valid number.
       </div>
     </div>
 
+    <div class="form-group">
+      <label for="grade">Grade</label>
+      <input id="grade" formControlName="grade" class="form-control">
+      <div *ngIf="studentForm.get('grade')?.invalid && studentForm.get('grade')?.touched" class="bubble-alert">
+        Grade is required.
+      </div>
+    </div>
+    
     <button type="submit" class="btn btn-primary">{{ editedStudent ? 'Update' : 'Add' }} Student</button>
     <button type="button" class="btn btn-secondary" (click)="cancelEdit()" *ngIf="editedStudent">Cancel</button>
   </form>
@@ -72,23 +80,27 @@
         <th>Student ID</th>
         <th>Major</th>
         <th>Year</th>
+        <th>Grade</th> 
         <th>Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let student of students">
         <td>{{ student.name }}</td>
-        <td>{{ student.photo }}</td>
+        <td>
+          <img *ngIf="student.photo" [src]="student.photo" alt="{{student.name}}'s photo" width="50">
+        </td>
         <td>{{ student.phone }}</td>
         <td>{{ student.email }}</td>
         <td>{{ student.studentId }}</td>
         <td>{{ student.major }}</td>
         <td>{{ student.year }}</td>
+        <td>{{ student.grade }}</td>
         <td>
-          <button class="btn btn-info" (click)="editStudent(student)">Edit</button>
-          <button class="btn btn-danger" (click)="deleteStudent(student)">Delete</button>
-          <button (click)="exportToExcel()">Export to Excel</button>
-          <button (click)="exportToPDF()">Export to PDF</button>
+          <button class="btn btn-info custom-btn" (click)="editStudent(student)">Edit</button>
+          <button class="btn btn-danger custom-btn" (click)="deleteStudent(student)">Delete</button>
+          <button class="btn custom-btn" (click)="exportToExcel()">Export to Excel</button>
+          <button class="btn custom-btn" (click)="exportToPDF()">Export to PDF</button>
         </td>
       </tr>
     </tbody>
