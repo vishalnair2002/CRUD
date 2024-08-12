@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-
 const routes: Routes = [];
 
 @NgModule({
@@ -15,8 +14,7 @@ const routes: Routes = [];
     HttpClientModule,
     CommonModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
-    
+    RouterModule.forRoot(routes),
   ],
   declarations: [
      
