@@ -19,12 +19,12 @@ export class StudentService {
     return this.http.get<Student[]>(this.apiUrl);
   }
 
-  addStudent(student: Student): Observable<Student> {
-    return this.http.post<Student>(this.apiUrl, student);
+  addStudent(student: Student, formData: FormData): Observable<Student> {
+    return this.http.post<Student>(this.apiUrl, formData); // Use formData in the request
   }
 
-  updateStudent(student: Student): Observable<void> {
-    return this.http.put<void>(`${this.apiUrl}/${student.id}`, student);
+  updateStudent(student: Student, formData: FormData): Observable<void> {
+    return this.http.put<void>(`${this.apiUrl}/${student.id}`, formData); // Use formData in the request
   }
 
   deleteStudent(id: number | null): Observable<void> {
@@ -42,24 +42,24 @@ export class StudentService {
   }
 
   private saveAsExcelFile(buffer: any, fileName: string): void {
-    const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
-    const EXCEL_EXTENSION = '.xlsx'; 
+    const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+    const EXCEL_EXTENSION = '.xlsx';
     const data: Blob = new Blob([buffer], { type: EXCEL_TYPE });
     saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
   }
 
   exportToPDF(students: any[], fileName: string): void {
     const doc = new jsPDF();
-
-    const columns = ["Name", "Photo", "Phone Number", "Email", "Student ID", "Major Subject", "Year"];
+    const columns = ["Name", "Photo", "Phone Number", "Email", "Student ID", "Major Subject", "Year", "Grade"];
     const rows = students.map(student => [
       student.name,
       student.photo,
-      student.phoneNumber,
+      student.phone,
       student.email,
       student.studentId,
-      student.majorSubject,
-      student.year
+      student.major,
+      student.year,
+      student.grade 
     ]);
 
     (doc as any).autoTable(columns, rows);
